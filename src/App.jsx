@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -13,51 +12,169 @@ import Main from "./components/Main";
 // }
 
 export const App = () => {
-  const [contact, setContact] = useState({
-    firstName: "John",
-    lastName: "Doe",
-    phone: "+1 (212) 555-1212",
-    email: "itsmyrealname@example.com",
-    isFavorite: true,
-  });
+  const signUp = (formData) => {
+    // e.preventDefault();
+    // const formElements = e.target;
+    // const formData = new FormData(formElements);
 
-  let starIcon = contact.isFavorite ? "/star-filled.png" : "/star-empty.png";
+    // const email = formData.get("email");
+    // const password = formData.get("password");
+    // const employmentStatus = formData.get("employmentStatus");
+    // const employeeSkills = formData.getAll("skills");
+    // const favColor = formData.get("favColor");
 
-  function toggleFavorite() {}
+    // QUICK SHORTCUT TO GET ALL FORMS FROM ONE LINE
+    const data = Object.fromEntries(formData);
+    const employeeSkills = formData.getAll("skills");
+
+    const allData = { ...data, skills: employeeSkills };
+
+    console.log(allData);
+  };
 
   return (
-    <main>
-      <article className="card">
-        <img
-          src="/user.png"
-          className="avatar"
-          alt="User profile picture of John Doe"
+    <section>
+      <h1>Signup form</h1>
+      <form action={signUp}>
+        <label htmlFor="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="joe@schmoe.com"
+          defaultValue="joe@schmoe.com"
         />
-        <div className="info">
-          <button
-            onClick={toggleFavorite}
-            aria-pressed={contact.isFavorite}
-            aria-label={
-              contact.isFavorite ? "Remove from favorites" : "Add to favorites"
-            }
-            className="favorite-button"
-          >
-            <img
-              src={starIcon}
-              alt={contact.isFavorite ? "filled star icon" : "empty star icon"}
-              className="favorite"
+
+        <br />
+
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          defaultValue="password123"
+        />
+
+        <label htmlFor="description">Description:</label>
+        <textarea
+          name="description"
+          id="description"
+          defaultValue="This is a description"
+        ></textarea>
+
+        <fieldset>
+          <legend>Employment Status:</legend>
+          <label>
+            <input
+              type="radio"
+              name="employmentStatus"
+              value="unemployed"
+              defaultChecked={true}
             />
-          </button>
-          <h2 className="name">
-            {contact.firstName} {contact.lastName}
-          </h2>
-          <p className="contact">{contact.phone}</p>
-          <p className="contact">{contact.email}</p>
-        </div>
-      </article>
-    </main>
+            Unemployed
+          </label>
+
+          <label>
+            <input type="radio" name="employmentStatus" value="part-time" />
+            Part-time
+          </label>
+
+          <label>
+            <input type="radio" name="employmentStatus" value="full-time" />
+            Full-time
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Employee Skills:</legend>
+          <label>
+            <input type="checkbox" name="skills" value="web-development" />
+            Web Development
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="graphic-design" />
+            Graphic Design
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="skills"
+              value="data-analysis"
+              defaultChecked={true}
+            />
+            Data Analysis
+          </label>
+        </fieldset>
+
+        <label htmlFor="favColor">What is yr fav color?</label>
+        <select name="favColor" id="favColor" defaultValue="" required>
+          <option value="" disabled>
+            -- Choose a color --
+          </option>
+          <option value="red">Red</option>
+          <option value="orange">Orange</option>
+          <option value="green">Green</option>
+          <option value="yellow">Yellow</option>
+          <option value="blue">Blue</option>
+        </select>
+
+        <button>Submit</button>
+      </form>
+    </section>
   );
 };
+
+// export const App = () => {
+//   const [contact, setContact] = useState({
+//     firstName: "John",
+//     lastName: "Doe",
+//     phone: "+1 (212) 555-1212",
+//     email: "itsmyrealname@example.com",
+//     isFavorite: false,
+//   });
+
+//   let starIcon = contact.isFavorite ? "/star-filled.png" : "/star-empty.png";
+
+//   function toggleFavorite() {
+//     setContact((prevContact) => ({
+//       ...prevContact,
+//       isFavorite: !prevContact.isFavorite,
+//     }));
+//   }
+
+//   return (
+//     <main>
+//       <article className="card">
+//         <img
+//           src="/user.png"
+//           className="avatar"
+//           alt="User profile picture of John Doe"
+//         />
+//         <div className="info">
+//           <button
+//             onClick={toggleFavorite}
+//             aria-pressed={contact.isFavorite}
+//             aria-label={
+//               contact.isFavorite ? "Remove from favorites" : "Add to favorites"
+//             }
+//             className="favorite-button"
+//           >
+//             <img
+//               src={starIcon}
+//               alt={contact.isFavorite ? "filled star icon" : "empty star icon"}
+//               className="favorite"
+//             />
+//           </button>
+//           <h2 className="name">
+//             {contact.firstName} {contact.lastName}
+//           </h2>
+//           <p className="contact">{contact.phone}</p>
+//           <p className="contact">{contact.email}</p>
+//         </div>
+//       </article>
+//     </main>
+//   );
+// };
 
 // export const App = () => {
 //   const [myFavoriteThings, setMyFavoriteThings] = useState([]);
