@@ -5,7 +5,7 @@
 /* ================
   CHEF CLAUDE PROJECT
 ================= */
-/* body {
+body {
   margin: 0;
   font-family: Inter, sans-serif;
   background-color: #fafaf8;
@@ -74,7 +74,7 @@ form > button {
   font-size: 14px;
   line-height: 17px;
   font-weight: 600;
-} */
+}
 
 /* ================
   useState
@@ -140,7 +140,7 @@ main {
 /* ================
   FORM
 ================= */
-body {
+/* body {
   margin: 0;
   padding: 10px;
   background-color: #2dd4bf;
@@ -199,4 +199,4 @@ button:hover {
   background-color: #115e59;
   border-color: #042f2e;
   color: white;
-}
+} */

@@ -1,128 +1,173 @@
 import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
+// import Joke from "./Joke";
+// import { useState } from "react";
+// import jokesData from "./jokesData";
 
-// function App() {
-//   return (
-//     <>
-//       <Header />
-//       <Main />
-//     </>
-//   );
-// }
-
-export const App = () => {
-  const signUp = (formData) => {
-    // e.preventDefault();
-    // const formElements = e.target;
-    // const formData = new FormData(formElements);
-
-    // const email = formData.get("email");
-    // const password = formData.get("password");
-    // const employmentStatus = formData.get("employmentStatus");
-    // const employeeSkills = formData.getAll("skills");
-    // const favColor = formData.get("favColor");
-
-    // QUICK SHORTCUT TO GET ALL FORMS FROM ONE LINE
-    const data = Object.fromEntries(formData);
-    const employeeSkills = formData.getAll("skills");
-
-    const allData = { ...data, skills: employeeSkills };
-
-    console.log(allData);
-  };
-
+function App() {
   return (
-    <section>
-      <h1>Signup form</h1>
-      <form action={signUp}>
-        <label htmlFor="email">Email:</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          placeholder="joe@schmoe.com"
-          defaultValue="joe@schmoe.com"
-        />
-
-        <br />
-
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          defaultValue="password123"
-        />
-
-        <label htmlFor="description">Description:</label>
-        <textarea
-          name="description"
-          id="description"
-          defaultValue="This is a description"
-        ></textarea>
-
-        <fieldset>
-          <legend>Employment Status:</legend>
-          <label>
-            <input
-              type="radio"
-              name="employmentStatus"
-              value="unemployed"
-              defaultChecked={true}
-            />
-            Unemployed
-          </label>
-
-          <label>
-            <input type="radio" name="employmentStatus" value="part-time" />
-            Part-time
-          </label>
-
-          <label>
-            <input type="radio" name="employmentStatus" value="full-time" />
-            Full-time
-          </label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Employee Skills:</legend>
-          <label>
-            <input type="checkbox" name="skills" value="web-development" />
-            Web Development
-          </label>
-          <label>
-            <input type="checkbox" name="skills" value="graphic-design" />
-            Graphic Design
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="skills"
-              value="data-analysis"
-              defaultChecked={true}
-            />
-            Data Analysis
-          </label>
-        </fieldset>
-
-        <label htmlFor="favColor">What is yr fav color?</label>
-        <select name="favColor" id="favColor" defaultValue="" required>
-          <option value="" disabled>
-            -- Choose a color --
-          </option>
-          <option value="red">Red</option>
-          <option value="orange">Orange</option>
-          <option value="green">Green</option>
-          <option value="yellow">Yellow</option>
-          <option value="blue">Blue</option>
-        </select>
-
-        <button>Submit</button>
-      </form>
-    </section>
+    <>
+      <Header />
+      <Main />
+    </>
   );
-};
+}
+
+// export const App = () => {
+//   const [messages, setMessages] = useState(["a", "b"]);
+
+//   const handleMessage = () => {
+//     if (messages.length === 0) {
+//       return "You're all caught up!";
+//     } else if (messages.length > 1) {
+//       return `You have ${messages.length} unread messages`;
+//     } else {
+//       return "You have 1 unread message.";
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h1>{handleMessage()}</h1>
+//     </div>
+//   );
+// };
+
+// export const App = () => {
+//   const [unreadMessages, setUnreadMessages] = useState(["a", "b"]);
+
+//   return (
+//     <div>
+//       {unreadMessages.length > 0 ? (
+//         <h1>You have {unreadMessages.length} unread messages!</h1>
+//       ) : (
+//         <p>You have no unread messages.</p>
+//       )}
+//     </div>
+//   );
+// };
+
+// export const App = () => {
+//   const jokeElements = jokesData.map((joke) => {
+//     return <Joke key={joke.id} setup={joke.setup} punchline={joke.punchline} />;
+//   });
+
+//   return <div>{jokeElements}</div>;
+// };
+
+// export const App = () => {
+//   const signUp = (formData) => {
+//     // e.preventDefault();
+//     // const formElements = e.target;
+//     // const formData = new FormData(formElements);
+
+//     // const email = formData.get("email");
+//     // const password = formData.get("password");
+//     // const employmentStatus = formData.get("employmentStatus");
+//     // const employeeSkills = formData.getAll("skills");
+//     // const favColor = formData.get("favColor");
+
+//     // QUICK SHORTCUT TO GET ALL FORMS FROM ONE LINE
+//     const data = Object.fromEntries(formData);
+//     const employeeSkills = formData.getAll("skills");
+
+//     const allData = { ...data, skills: employeeSkills };
+
+//     console.log(allData);
+//   };
+
+//   return (
+//     <section>
+//       <h1>Signup form</h1>
+//       <form action={signUp}>
+//         <label htmlFor="email">Email:</label>
+//         <input
+//           id="email"
+//           type="email"
+//           name="email"
+//           placeholder="joe@schmoe.com"
+//           defaultValue="joe@schmoe.com"
+//         />
+
+//         <br />
+
+//         <label htmlFor="password">Password:</label>
+//         <input
+//           type="password"
+//           name="password"
+//           id="password"
+//           defaultValue="password123"
+//         />
+
+//         <label htmlFor="description">Description:</label>
+//         <textarea
+//           name="description"
+//           id="description"
+//           defaultValue="This is a description"
+//         ></textarea>
+
+//         <fieldset>
+//           <legend>Employment Status:</legend>
+//           <label>
+//             <input
+//               type="radio"
+//               name="employmentStatus"
+//               value="unemployed"
+//               defaultChecked={true}
+//             />
+//             Unemployed
+//           </label>
+
+//           <label>
+//             <input type="radio" name="employmentStatus" value="part-time" />
+//             Part-time
+//           </label>
+
+//           <label>
+//             <input type="radio" name="employmentStatus" value="full-time" />
+//             Full-time
+//           </label>
+//         </fieldset>
+
+//         <fieldset>
+//           <legend>Employee Skills:</legend>
+//           <label>
+//             <input type="checkbox" name="skills" value="web-development" />
+//             Web Development
+//           </label>
+//           <label>
+//             <input type="checkbox" name="skills" value="graphic-design" />
+//             Graphic Design
+//           </label>
+//           <label>
+//             <input
+//               type="checkbox"
+//               name="skills"
+//               value="data-analysis"
+//               defaultChecked={true}
+//             />
+//             Data Analysis
+//           </label>
+//         </fieldset>
+
+//         <label htmlFor="favColor">What is yr fav color?</label>
+//         <select name="favColor" id="favColor" defaultValue="" required>
+//           <option value="" disabled>
+//             -- Choose a color --
+//           </option>
+//           <option value="red">Red</option>
+//           <option value="orange">Orange</option>
+//           <option value="green">Green</option>
+//           <option value="yellow">Yellow</option>
+//           <option value="blue">Blue</option>
+//         </select>
+
+//         <button>Submit</button>
+//       </form>
+//     </section>
+//   );
+// };
 
 // export const App = () => {
 //   const [contact, setContact] = useState({
