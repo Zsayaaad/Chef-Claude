@@ -1,9 +1,13 @@
 import "./App.css";
+import Count from "./components/Count";
 import Header from "./components/Header";
 import Main from "./components/Main";
-// import Joke from "./Joke";
 // import { useState } from "react";
-// import jokesData from "./jokesData";
+import Star from "./components/Star";
+import Header2 from "./components/Header2";
+import Body from "./components/Body";
+// import padsData from "./pads";
+import Pad from "./components/Pad";
 
 function App() {
   return (
@@ -13,6 +17,49 @@ function App() {
     </>
   );
 }
+
+// export const App = () => {
+//   const [pads, setPads] = useState(padsData);
+
+//   const padsToggle = (id) => {
+//     // console.log("Clicked!");
+//     // console.log(id);
+//     // map over pads array to get the pad that has my id
+//     // reverse it's on prop
+//     setPads((prevPads) =>
+//       prevPads.map((btn) => {
+//         return btn.id === id ? { ...btn, on: !btn.on } : btn;
+//       }),
+//     );
+//   };
+
+//   const buttonElements = pads.map((pad) => (
+//     <Pad
+//       key={pad.id}
+//       id={pad.id}
+//       clickPad={padsToggle}
+//       color={pad.color}
+//       on={pad.on}
+//     />
+//   ));
+
+//   return (
+//     <main>
+//       <div className="pad-container">{buttonElements}</div>
+//     </main>
+//   );
+// };
+
+// export const App = () => {
+//   const [userName, setUserName] = useState("Joe");
+
+//   return (
+//     <main>
+//       <Header2 user={userName} />
+//       <Body user={userName} />
+//     </main>
+//   );
+// };
 
 // export const App = () => {
 //   const [messages, setMessages] = useState(["a", "b"]);
@@ -178,8 +225,6 @@ function App() {
 //     isFavorite: false,
 //   });
 
-//   let starIcon = contact.isFavorite ? "/star-filled.png" : "/star-empty.png";
-
 //   function toggleFavorite() {
 //     setContact((prevContact) => ({
 //       ...prevContact,
@@ -196,20 +241,7 @@ function App() {
 //           alt="User profile picture of John Doe"
 //         />
 //         <div className="info">
-//           <button
-//             onClick={toggleFavorite}
-//             aria-pressed={contact.isFavorite}
-//             aria-label={
-//               contact.isFavorite ? "Remove from favorites" : "Add to favorites"
-//             }
-//             className="favorite-button"
-//           >
-//             <img
-//               src={starIcon}
-//               alt={contact.isFavorite ? "filled star icon" : "empty star icon"}
-//               className="favorite"
-//             />
-//           </button>
+//           <Star isFilled={contact.isFavorite} handleStar={toggleFavorite} />
 //           <h2 className="name">
 //             {contact.firstName} {contact.lastName}
 //           </h2>
@@ -290,18 +322,18 @@ function App() {
 //   };
 
 //   const sub = () => {
-//   // using callback func
+//     // using callback func
 //     setCount((prevCount) => prevCount - 1);
 //   };
 
 //   return (
 //     <main className="container">
-//       <h1>How many times will Bob say "state" in this section?</h1>
 //       <div className="counter">
 //         <button className="minus" aria-label="Decrease count" onClick={sub}>
 //           -
 //         </button>
-//         <h2 className="count">{count}</h2>
+//         {/* <h2 className="count">{count}</h2> */}
+//         <Count number={count} />
 //         <button className="plus" aria-label="Increase count" onClick={add}>
 //           +
 //         </button>
