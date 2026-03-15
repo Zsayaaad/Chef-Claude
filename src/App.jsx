@@ -10,6 +10,13 @@ import Body from "./components/Body";
 import Pad from "./components/Pad";
 
 function App() {
+  // Test Hugging Face API Key from environment variables
+  // console.log(
+  //   "Hugging Face API Key:",
+  //   import.meta.env.VITE_HUGGING_FACE_API_KEY,
+  // );
+  // console.log("All env variables:", import.meta.env);
+
   return (
     <>
       <Header />

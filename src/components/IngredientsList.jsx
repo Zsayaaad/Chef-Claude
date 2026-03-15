@@ -1,4 +1,4 @@
-const IngredientsList = ({ clickRecipeShown, ingredients }) => {
+const IngredientsList = ({ getRecipe, ingredients, isLoading }) => {
   return (
     <section>
       <h2>Ingredients on hand:</h2>
@@ -13,7 +13,9 @@ const IngredientsList = ({ clickRecipeShown, ingredients }) => {
             <h3>Ready for a recipe?</h3>
             <p>Generate a recipe from your list of ingredients.</p>
           </div>
-          <button onClick={clickRecipeShown}>Get a recipe</button>
+          <button onClick={getRecipe} disabled={isLoading}>
+            {isLoading ? "Generating..." : "Get a recipe"}
+          </button>
         </div>
       )}
     </section>
