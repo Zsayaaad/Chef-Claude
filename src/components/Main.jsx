@@ -7,12 +7,7 @@ import { getRecipeFromAI } from "../ai";
 // Trigger getting the recipe when user click Get a recipe button.
 
 const Main = () => {
-  const [ingredients, setIngredients] = useState([
-    "all the main spices",
-    "pasta",
-    "ground beef",
-    "tomato paste",
-  ]);
+  const [ingredients, setIngredients] = useState([]);
 
   // const [recipeShown, setRecipeShown] = useState(false);
   const [recipe, setRecipe] = useState("");
