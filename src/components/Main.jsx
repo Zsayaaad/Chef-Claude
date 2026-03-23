@@ -8,11 +8,11 @@ import { getRecipeFromAI } from "../ai";
 
 const Main = () => {
   const [ingredients, setIngredients] = useState([
-    "chicken",
-    "all the main spices",
-    "corn",
-    "heavy cream",
-    "pasta",
+    // "chicken",
+    // "all the main spices",
+    // "corn",
+    // "heavy cream",
+    // "pasta",
   ]);
   const [recipe, setRecipe] = useState("");
   const [isLoading, setIsLoading] = useState(false);
